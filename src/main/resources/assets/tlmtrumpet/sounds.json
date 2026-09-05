@@ -1,0 +1,82 @@
+{
+  "item.trumpet.0": {
+    "category": "voice",
+    "subtitle": "subtitle.tlmtrumpet.item.trumpet",
+    "sounds": [
+      {
+        "name": "tlmtrumpet:trumpet/trumpet_0",
+        "stream": false
+      }
+    ]
+  },
+  "item.trumpet.1": {
+    "category": "voice",
+    "subtitle": "subtitle.tlmtrumpet.item.trumpet",
+    "sounds": [
+      {
+        "name": "tlmtrumpet:trumpet/trumpet_1",
+        "stream": false
+      }
+    ]
+  },
+  "item.trumpet.2": {
+    "category": "voice",
+    "subtitle": "subtitle.tlmtrumpet.item.trumpet",
+    "sounds": [
+      {
+        "name": "tlmtrumpet:trumpet/trumpet_2",
+        "stream": false
+      }
+    ]
+  },
+  "item.trumpet.3": {
+    "category": "voice",
+    "subtitle": "subtitle.tlmtrumpet.item.trumpet",
+    "sounds": [
+      {
+        "name": "tlmtrumpet:trumpet/trumpet_3",
+        "stream": false
+      }
+    ]
+  },
+  "item.trumpet.4": {
+    "category": "voice",
+    "subtitle": "subtitle.tlmtrumpet.item.trumpet",
+    "sounds": [
+      {
+        "name": "tlmtrumpet:trumpet/trumpet_4",
+        "stream": false
+      }
+    ]
+  },
+  "item.trumpet.5": {
+    "category": "voice",
+    "subtitle": "subtitle.tlmtrumpet.item.trumpet",
+    "sounds": [
+      {
+        "name": "tlmtrumpet:trumpet/trumpet_5",
+        "stream": false
+      }
+    ]
+  },
+  "item.trumpet.6": {
+    "category": "voice",
+    "subtitle": "subtitle.tlmtrumpet.item.trumpet",
+    "sounds": [
+      {
+        "name": "tlmtrumpet:trumpet/trumpet_6",
+        "stream": false
+      }
+    ]
+  },
+  "item.trumpet.7": {
+    "category": "voice",
+    "subtitle": "subtitle.tlmtrumpet.item.trumpet",
+    "sounds": [
+      {
+        "name": "tlmtrumpet:trumpet/trumpet_7",
+        "stream": false
+      }
+    ]
+  }
+}
