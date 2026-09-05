@@ -1,41 +1,35 @@
-buildscript {
-    repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
-        maven { url = 'https://maven.parchmentmc.org' }
-        mavenCentral()
-        gradlePluginPortal()
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '[6.0.16,6.2)', changing: true
-        classpath 'org.parchmentmc:librarian:1.+'
-    }
+plugins {
+    id 'java'
+    id 'idea'
+    id 'eclipse'
+    id 'net.neoforged.moddev' version '2.0.95'
 }
 
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.parchmentmc.librarian.forgegradle'
-apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'eclipse'
-
 version = mod_version
-group = 'com.github.eileen'
-archivesBaseName = 'tlmtrumpet'
+group = mod_group_id
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+base {
+    archivesName = mod_id
+}
 
-minecraft {
-    // Same mappings as Touhou Little Maid so sources line up when cross-referencing.
-    mappings channel: 'parchment', version: '2023.08.20-1.20.1'
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+neoForge {
+    version = project.neo_version
+
+    parchment {
+        minecraftVersion = project.parchment_minecraft_version
+        mappingsVersion = project.parchment_mappings_version
+    }
+
     runs {
-        client {
-            workingDirectory project.file('run')
-            property 'forge.logging.console.level', 'debug'
-            mods { tlmtrumpet { source sourceSets.main } }
-        }
-        server {
-            workingDirectory project.file('run')
-            property 'forge.logging.console.level', 'debug'
-            mods { tlmtrumpet { source sourceSets.main } }
+        client { client() }
+        server { server() }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
         }
     }
 }
@@ -45,27 +39,24 @@ repositories {
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:${forge_version}"
     // No compile-time dependency on Touhou Little Maid: the trumpet is resolved at
-    // runtime through ForgeRegistries by its registry name, so this builds standalone.
+    // runtime through BuiltInRegistries by its registry name, so this builds standalone.
 }
 
-processResources {
-    inputs.property 'version', project.version
-    filesMatching('META-INF/mods.toml') {
-        expand 'version': project.version
-    }
-}
-
-jar {
-    manifest {
-        attributes([
-                'Specification-Title'     : 'tlmtrumpet',
-                'Specification-Vendor'    : 'eileen',
-                'Specification-Version'   : '1',
-                'Implementation-Title'    : project.name,
-                'Implementation-Version'  : project.jar.archiveVersion,
-                'Implementation-Vendor'   : 'eileen'
-        ])
+tasks.withType(ProcessResources).configureEach {
+    def expandProps = [
+            'version'             : version,
+            'mod_id'              : mod_id,
+            'mod_name'            : mod_name,
+            'mod_license'         : mod_license,
+            'mod_version'         : mod_version,
+            'mod_authors'         : mod_authors,
+            'minecraft_version'   : minecraft_version,
+            'neo_version_range'   : neo_version_range,
+            'loader_version_range': loader_version_range
+    ]
+    inputs.properties(expandProps)
+    filesMatching(['META-INF/neoforge.mods.toml']) {
+        expand expandProps
     }
 }

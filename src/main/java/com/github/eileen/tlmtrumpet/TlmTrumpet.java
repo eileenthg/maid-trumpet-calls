@@ -1,21 +1,23 @@
 package com.github.eileen.tlmtrumpet;
 
 import com.google.common.collect.Lists;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.List;
 
@@ -29,28 +31,29 @@ import java.util.List;
 public class TlmTrumpet {
     public static final String MOD_ID = "tlmtrumpet";
 
-    private static final ResourceLocation TRUMPET_ID = new ResourceLocation("touhou_little_maid", "trumpet");
+    private static final ResourceLocation TRUMPET_ID = ResourceLocation.fromNamespaceAndPath("touhou_little_maid", "trumpet");
     /** Mirrors ItemTrumpet.MIN_USE_DURATION: below this the item was released too early to summon. */
     private static final int MIN_USE_DURATION = 20;
     private static final int SOUND_COUNT = 8;
 
-    public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, MOD_ID);
-    public static final List<RegistryObject<SoundEvent>> TRUMPET_SOUNDS = registerTrumpetSounds();
+    public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(Registries.SOUND_EVENT, MOD_ID);
+    public static final List<DeferredHolder<SoundEvent, SoundEvent>> TRUMPET_SOUNDS = registerTrumpetSounds();
 
-    public TlmTrumpet() {
-        SOUNDS.register(FMLJavaModLoadingContext.get().getModEventBus());
+    public TlmTrumpet(IEventBus modEventBus, ModContainer modContainer) {
+        SOUNDS.register(modEventBus);
     }
 
-    private static List<RegistryObject<SoundEvent>> registerTrumpetSounds() {
-        List<RegistryObject<SoundEvent>> sounds = Lists.newArrayListWithCapacity(SOUND_COUNT);
+    private static List<DeferredHolder<SoundEvent, SoundEvent>> registerTrumpetSounds() {
+        List<DeferredHolder<SoundEvent, SoundEvent>> sounds = Lists.newArrayListWithCapacity(SOUND_COUNT);
         for (int i = 0; i < SOUND_COUNT; i++) {
             String name = "item.trumpet." + i;
-            sounds.add(SOUNDS.register(name, () -> SoundEvent.createFixedRangeEvent(new ResourceLocation(MOD_ID, name), 16.0F)));
+            sounds.add(SOUNDS.register(name, () -> SoundEvent.createFixedRangeEvent(
+                    ResourceLocation.fromNamespaceAndPath(MOD_ID, name), 16.0F)));
         }
         return List.copyOf(sounds);
     }
 
-    @Mod.EventBusSubscriber(modid = MOD_ID)
+    @EventBusSubscriber(modid = MOD_ID)
     public static final class Handler {
         /**
          * LivingEntity#releaseUsingItem posts this immediately before Item#releaseUsing, and its
@@ -69,8 +72,10 @@ public class TlmTrumpet {
             if (!(event.getEntity() instanceof Player player) || player.level().isClientSide) {
                 return;
             }
-            Item trumpet = ForgeRegistries.ITEMS.getValue(TRUMPET_ID);
-            if (trumpet == null || !event.getItem().is(trumpet)) {
+            // Compare by registry key rather than looking the item up, so this stays correct
+            // whether or not Touhou Little Maid is present.
+            ResourceLocation held = BuiltInRegistries.ITEM.getKey(event.getItem().getItem());
+            if (!TRUMPET_ID.equals(held)) {
                 return;
             }
             Level level = player.level();
