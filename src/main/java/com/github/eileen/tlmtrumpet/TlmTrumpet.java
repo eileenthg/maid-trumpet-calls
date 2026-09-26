@@ -40,7 +40,10 @@ public class TlmTrumpet {
     /** Mirrors ItemTrumpet.MIN_USE_DURATION: below this the item was released too early to summon. */
     private static final int MIN_USE_DURATION = 20;
     /** The fanfares shipped with the mod. Datapacks add more; see TlmTrumpetRegistries. */
-    private static final List<String> BUILT_IN_CALLS = List.of("flowering_night", "eflat_arch", "eflat_scalar");
+    private static final List<String> BUILT_IN_CALLS = List.of(
+            "flowering_night", "undyne_descending", "undyne_chromatic",
+            "bedrock_descending", "bedrock_ascending", "clownplease",
+            "eflat_arch", "eflat_scalar");
 
     public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(Registries.SOUND_EVENT, MOD_ID);
     public static final List<DeferredHolder<SoundEvent, SoundEvent>> TRUMPET_SOUNDS = registerTrumpetSounds();

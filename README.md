@@ -3,7 +3,7 @@
 An addon for [Touhou Little Maid](https://github.com/TartaricAcid/TouhouLittleMaid) that gives the
 trumpet a random ZUNpet fanfare when it summons your maids. Minecraft 1.21.1, NeoForge.
 
-Three melodies ship with the mod, and **datapacks can add more**.
+Eight melodies ship with the mod, and **datapacks can add more**.
 
 ## How it works
 
@@ -83,7 +83,7 @@ constant volume with no distance falloff or panning.
 The server logs how many calls loaded at startup, which is the quickest way to confirm a pack was
 picked up:
 
-    Loaded 5 trumpet call(s): [mypack:my_horn_call, tlmtrumpet:eflat_arch, ...]
+    Loaded 10 trumpet call(s): [mypack:my_horn_call, tlmtrumpet:bedrock_ascending, ...]
 
 ### Replacing or removing the built-in calls
 
@@ -95,31 +95,50 @@ much higher `weight`.
 
 ## The bundled sounds
 
-Three melodies played on the "Romantic Tp" ZUNpet samples from a Touhou soundfont, rendered mono at
-44.1 kHz with a small room reverb. All at 152 BPM.
+Eight melodies played on the "Romantic Tp" ZUNpet samples from a Touhou soundfont, rendered mono at
+44.1 kHz with a small room reverb.
 
-| Call | Melody |
-|---|---|
-| `flowering_night` | "Flowering Night" by ZUN - Sakuya's theme |
-| `eflat_arch` | original, E flat minor |
-| `eflat_scalar` | original, E flat minor |
+| Call | Tempo | Length |
+|---|---|---|
+| `flowering_night` | 152 BPM | 4.43 s |
+| `undyne_descending` | 152 BPM | 5.71 s |
+| `undyne_chromatic` | 152 BPM | 5.71 s |
+| `bedrock_descending` | 155 BPM | 4.07 s |
+| `bedrock_ascending` | 155 BPM | 4.07 s |
+| `clownplease` | 155 BPM | 4.07 s |
+| `eflat_arch` | 152 BPM | 5.31 s |
+| `eflat_scalar` | 152 BPM | 4.13 s |
+
+Names describe either the source or the melodic shape; see credits below for who composed what.
 
 See [`tools/`](tools/) for the pipeline that generated them and how to change or add melodies.
 
 ## Credits and attribution
 
-The MIT license above covers the **code**. The audio is credited here rather than claimed.
+The MIT license above covers the **code**. The audio is derivative work and is credited here rather
+than claimed.
 
-All three calls are rendered from the "Romantic Tp" preset of a third-party Touhou soundfont
+All eight calls are rendered from the "Romantic Tp" preset of a third-party Touhou soundfont
 (`TOUHOU INSTRUMENT + DRUM KIT.sf2`) - the ZUNpet sound itself is not mine.
 
-`flowering_night` transcribes the melody of "Flowering Night" by **ZUN**, from Touhou Project.
-`eflat_arch` and `eflat_scalar` are original compositions.
+What is bundled is a transcribed **melody line** in each case, not anyone's arrangement, harmony or
+recording:
 
-Touhou Project is by ZUN (Team Shanghai Alice). Touhou Little Maid is by TartaricAcid and
-contributors. If you hold rights in any of the above and would rather a call were removed, open an
-issue and it will be taken out - the datapack registry means removing one is a file deletion, not a
-code change.
+| Call | Composer | Transcribed from |
+|---|---|---|
+| `flowering_night` | **ZUN** | "Flowering Night", via PineappleDisciple's upload |
+| `undyne_descending`, `undyne_chromatic` | **Toby Fox** | Undyne's theme, via Hakurei Gaming's arrangement |
+| `bedrock_descending`, `bedrock_ascending` | **ZUN** | BedrockSolid's "ZUNpet test" |
+| `clownplease` | **ZUN** | Clownplease's "How to play the ZUNpet" |
+| `eflat_arch`, `eflat_scalar` | **ZUN** | supplied as notation |
+
+Touhou Project is by ZUN (Team Shanghai Alice); the Touhou tracks above are his compositions, and
+the channels listed are where the melody was transcribed from rather than rights holders in it.
+Undyne's theme is from Undertale by Toby Fox. Touhou Little Maid is by TartaricAcid and
+contributors.
+
+If you hold rights in any of the above and would rather a call were removed, open an issue and it
+will be taken out - the datapack registry means removing one is a file deletion, not a code change.
 
 ## Building and testing
 

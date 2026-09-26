@@ -9,6 +9,56 @@
       }
     ]
   },
+  "item.trumpet.undyne_descending": {
+    "category": "voice",
+    "subtitle": "subtitle.tlmtrumpet.item.trumpet",
+    "sounds": [
+      {
+        "name": "tlmtrumpet:trumpet/undyne_descending",
+        "stream": false
+      }
+    ]
+  },
+  "item.trumpet.undyne_chromatic": {
+    "category": "voice",
+    "subtitle": "subtitle.tlmtrumpet.item.trumpet",
+    "sounds": [
+      {
+        "name": "tlmtrumpet:trumpet/undyne_chromatic",
+        "stream": false
+      }
+    ]
+  },
+  "item.trumpet.bedrock_descending": {
+    "category": "voice",
+    "subtitle": "subtitle.tlmtrumpet.item.trumpet",
+    "sounds": [
+      {
+        "name": "tlmtrumpet:trumpet/bedrock_descending",
+        "stream": false
+      }
+    ]
+  },
+  "item.trumpet.bedrock_ascending": {
+    "category": "voice",
+    "subtitle": "subtitle.tlmtrumpet.item.trumpet",
+    "sounds": [
+      {
+        "name": "tlmtrumpet:trumpet/bedrock_ascending",
+        "stream": false
+      }
+    ]
+  },
+  "item.trumpet.clownplease": {
+    "category": "voice",
+    "subtitle": "subtitle.tlmtrumpet.item.trumpet",
+    "sounds": [
+      {
+        "name": "tlmtrumpet:trumpet/clownplease",
+        "stream": false
+      }
+    ]
+  },
   "item.trumpet.eflat_arch": {
     "category": "voice",
     "subtitle": "subtitle.tlmtrumpet.item.trumpet",
