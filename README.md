@@ -111,6 +111,29 @@ Eight melodies played on the "Romantic Tp" ZUNpet samples from a Touhou soundfon
 
 See [`tools/`](tools/) for the pipeline that generated them and how to change or add melodies.
 
+## Credits and attribution
+
+The MIT license above covers the **code**. The bundled audio is derivative work and is credited
+here rather than claimed.
+
+All eight calls are rendered from the "Romantic Tp" preset of a third-party Touhou soundfont
+(`TOUHOU INSTRUMENT + DRUM KIT.sf2`) - the ZUNpet sound itself is not mine.
+
+Melodies:
+
+| Call | Transcribed from |
+|---|---|
+| `undyne_descending`, `undyne_chromatic` | "Spear of Justice" / Undyne's theme by **Toby Fox**, as arranged by **Hakurei Gaming** |
+| `flowering_night` | "Flowering Night" by **ZUN** (Touhou Project) |
+| `bedrock_descending`, `bedrock_ascending` | ZUNpet test by **BedrockSolid** |
+| `clownplease` | "How to play the ZUNpet" by **Clownplease** |
+| `eflat_arch`, `eflat_scalar` | original compositions |
+
+Touhou Project is by ZUN (Team Shanghai Alice). Touhou Little Maid is by TartaricAcid and
+contributors. If you hold rights in any of the above and would rather a call were removed, open an
+issue and it will be taken out - the datapack registry means removing one is a file deletion, not a
+code change.
+
 ## Building and testing
 
     ./gradlew build

@@ -1,0 +1,26 @@
+name: Bug report
+description: Something is not working
+labels: [ bug ]
+body:
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Minecraft, NeoForge, Touhou Little Maid, and this mod
+      placeholder: "MC 1.21.1, NeoForge 21.1.219, TLM 1.5.3, Trumpet Calls 1.0.0"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you expected, and what happened instead
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Log
+      description: >
+        Please attach latest.log. The mod logs its loaded calls at server start -
+        a line beginning "Loaded N trumpet call(s)" - which is usually the useful part.

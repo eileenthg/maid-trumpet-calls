@@ -1,0 +1,52 @@
+name: Release
+
+# Publishes on a version tag, e.g.  git tag v1.0.0 && git push origin v1.0.0
+on:
+  push:
+    tags: [ "v*" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build
+        run: ./gradlew build --no-daemon
+
+      # Reads mod id, version and dependencies out of neoforge.mods.toml, then uploads to all
+      # three targets. Any of the three is skipped automatically if its id/token is absent, so
+      # this workflow works even before the CurseForge and Modrinth projects exist.
+      - name: Publish
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          modrinth-id: ${{ vars.MODRINTH_ID }}
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+
+          curseforge-id: ${{ vars.CURSEFORGE_ID }}
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+
+          files: build/libs/!(*-@(sources|javadoc)).jar
+
+          loaders: neoforge
+          game-versions: 1.21.1
+          java: 21
+          version-type: release
+
+          dependencies: |
+            touhou_little_maid(required)
