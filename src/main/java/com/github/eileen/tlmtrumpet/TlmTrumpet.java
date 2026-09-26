@@ -1,6 +1,5 @@
 package com.github.eileen.tlmtrumpet;
 
-import com.google.common.collect.Lists;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -41,7 +40,7 @@ public class TlmTrumpet {
     /** Mirrors ItemTrumpet.MIN_USE_DURATION: below this the item was released too early to summon. */
     private static final int MIN_USE_DURATION = 20;
     /** The fanfares shipped with the mod. Datapacks add more; see TlmTrumpetRegistries. */
-    private static final int BUILT_IN_SOUND_COUNT = 8;
+    private static final List<String> BUILT_IN_CALLS = List.of("flowering_night", "eflat_arch", "eflat_scalar");
 
     public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(Registries.SOUND_EVENT, MOD_ID);
     public static final List<DeferredHolder<SoundEvent, SoundEvent>> TRUMPET_SOUNDS = registerTrumpetSounds();
@@ -57,13 +56,11 @@ public class TlmTrumpet {
      * anyone else's, actually get played.
      */
     private static List<DeferredHolder<SoundEvent, SoundEvent>> registerTrumpetSounds() {
-        List<DeferredHolder<SoundEvent, SoundEvent>> sounds = Lists.newArrayListWithCapacity(BUILT_IN_SOUND_COUNT);
-        for (int i = 0; i < BUILT_IN_SOUND_COUNT; i++) {
-            String name = "item.trumpet." + i;
-            sounds.add(SOUNDS.register(name, () -> SoundEvent.createFixedRangeEvent(
-                    ResourceLocation.fromNamespaceAndPath(MOD_ID, name), 16.0F)));
-        }
-        return List.copyOf(sounds);
+        return BUILT_IN_CALLS.stream()
+                .map(call -> "item.trumpet." + call)
+                .map(name -> SOUNDS.register(name, () -> SoundEvent.createFixedRangeEvent(
+                        ResourceLocation.fromNamespaceAndPath(MOD_ID, name), 16.0F)))
+                .toList();
     }
 
     @EventBusSubscriber(modid = MOD_ID)

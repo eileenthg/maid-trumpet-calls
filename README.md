@@ -3,7 +3,7 @@
 An addon for [Touhou Little Maid](https://github.com/TartaricAcid/TouhouLittleMaid) that gives the
 trumpet a random ZUNpet fanfare when it summons your maids. Minecraft 1.21.1, NeoForge.
 
-Eight melodies ship with the mod, and **datapacks can add more**.
+Three melodies ship with the mod, and **datapacks can add more**.
 
 ## How it works
 
@@ -37,7 +37,7 @@ registry id's namespace *and* path.
 **Reusing a sound that a mod already registered:**
 
 ```json
-{ "sound": "tlmtrumpet:item.trumpet.2" }
+{ "sound": "tlmtrumpet:item.trumpet.flowering_night" }
 ```
 
 **Defining a sound inline**, which is what you want for brand new audio:
@@ -83,51 +83,38 @@ constant volume with no distance falloff or panning.
 The server logs how many calls loaded at startup, which is the quickest way to confirm a pack was
 picked up:
 
-    Loaded 10 trumpet call(s): [mypack:my_horn_call, tlmtrumpet:bedrock_ascending, ...]
+    Loaded 5 trumpet call(s): [mypack:my_horn_call, tlmtrumpet:eflat_arch, ...]
 
 ### Replacing or removing the built-in calls
 
 A datapack can override any built-in call by using the same path and file name under the
-`tlmtrumpet` namespace - for example `data/tlmtrumpet/tlmtrumpet/trumpet_call/clownplease.json`
+`tlmtrumpet` namespace - for example `data/tlmtrumpet/tlmtrumpet/trumpet_call/flowering_night.json`
 pointed at a different sound. Datapack registries cannot *delete* entries, so to mute a built-in
 call rather than replace it, override it with a near-silent sound or give the ones you do want a
 much higher `weight`.
 
 ## The bundled sounds
 
-Eight melodies played on the "Romantic Tp" ZUNpet samples from a Touhou soundfont, rendered mono at
-44.1 kHz with a small room reverb.
+Three melodies played on the "Romantic Tp" ZUNpet samples from a Touhou soundfont, rendered mono at
+44.1 kHz with a small room reverb. All at 152 BPM.
 
-| Call | Melody | Tempo |
-|---|---|---|
-| `undyne_descending` | Undyne's theme arrangement, descending ending | 152 BPM |
-| `undyne_chromatic` | Undyne's theme arrangement, chromatic ending | 152 BPM |
-| `flowering_night` | Flowering Night (Sakuya's theme) | 152 BPM |
-| `bedrock_descending` | BedrockSolid ZUNpet test, descending ending | 155 BPM |
-| `bedrock_ascending` | BedrockSolid ZUNpet test, ascending ending | 155 BPM |
-| `clownplease` | Clownplease "How to play the ZUNpet" | 155 BPM |
-| `eflat_arch` | original, E flat minor | 152 BPM |
-| `eflat_scalar` | original, E flat minor | 152 BPM |
+| Call | Melody |
+|---|---|
+| `flowering_night` | "Flowering Night" by ZUN - Sakuya's theme |
+| `eflat_arch` | original, E flat minor |
+| `eflat_scalar` | original, E flat minor |
 
 See [`tools/`](tools/) for the pipeline that generated them and how to change or add melodies.
 
 ## Credits and attribution
 
-The MIT license above covers the **code**. The bundled audio is derivative work and is credited
-here rather than claimed.
+The MIT license above covers the **code**. The audio is credited here rather than claimed.
 
-All eight calls are rendered from the "Romantic Tp" preset of a third-party Touhou soundfont
+All three calls are rendered from the "Romantic Tp" preset of a third-party Touhou soundfont
 (`TOUHOU INSTRUMENT + DRUM KIT.sf2`) - the ZUNpet sound itself is not mine.
 
-Melodies:
-
-| Call | Transcribed from |
-|---|---|
-| `undyne_descending`, `undyne_chromatic` | "Spear of Justice" / Undyne's theme by **Toby Fox**, as arranged by **Hakurei Gaming** |
-| `flowering_night` | "Flowering Night" by **ZUN** (Touhou Project) |
-| `bedrock_descending`, `bedrock_ascending` | ZUNpet test by **BedrockSolid** |
-| `clownplease` | "How to play the ZUNpet" by **Clownplease** |
-| `eflat_arch`, `eflat_scalar` | original compositions |
+`flowering_night` transcribes the melody of "Flowering Night" by **ZUN**, from Touhou Project.
+`eflat_arch` and `eflat_scalar` are original compositions.
 
 Touhou Project is by ZUN (Team Shanghai Alice). Touhou Little Maid is by TartaricAcid and
 contributors. If you hold rights in any of the above and would rather a call were removed, open an

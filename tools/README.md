@@ -29,9 +29,10 @@ Edit the notation strings in `build_sounds.py` and re-run it. The format is
 
 Flats and sharps both parse, so `Ab5` and `G#5` are the same note.
 
-To add a ninth bundled call: append an entry here, bump `BUILT_IN_SOUND_COUNT`
-in `TlmTrumpet.java`, add an `item.trumpet.8` block to `sounds.json`, and add
-`data/tlmtrumpet/tlmtrumpet/trumpet_call/<name>.json` pointing at it.
+To add another bundled call: append an entry to `SET` here, add its name to
+`BUILT_IN_CALLS` in `TlmTrumpet.java`, add an `item.trumpet.<name>` block to
+`sounds.json`, and add `data/tlmtrumpet/tlmtrumpet/trumpet_call/<name>.json`
+pointing at it. The name is the same in all four places.
 
 If you only want to add a call for your own world or modpack, you do not need
 to touch this mod at all - use a datapack plus a resource pack instead. See the
