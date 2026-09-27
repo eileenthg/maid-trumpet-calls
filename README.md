@@ -83,7 +83,7 @@ constant volume with no distance falloff or panning.
 The server logs how many calls loaded at startup, which is the quickest way to confirm a pack was
 picked up:
 
-    Loaded 10 trumpet call(s): [mypack:my_horn_call, tlmtrumpet:bedrock_ascending, ...]
+    Loaded 10 trumpet call(s): [mypack:my_horn_call, tlmtrumpet:minoriko_ascending, ...]
 
 ### Replacing or removing the built-in calls
 
@@ -98,18 +98,20 @@ much higher `weight`.
 Eight melodies played on the "Romantic Tp" ZUNpet samples from a Touhou soundfont, rendered mono at
 44.1 kHz with a small room reverb.
 
-| Call | Tempo | Length |
-|---|---|---|
-| `flowering_night` | 152 BPM | 4.43 s |
-| `undyne_descending` | 152 BPM | 5.71 s |
-| `undyne_chromatic` | 152 BPM | 5.71 s |
-| `bedrock_descending` | 155 BPM | 4.07 s |
-| `bedrock_ascending` | 155 BPM | 4.07 s |
-| `clownplease` | 155 BPM | 4.07 s |
-| `eflat_arch` | 152 BPM | 5.31 s |
-| `eflat_scalar` | 152 BPM | 4.13 s |
+| Call | Piece | Tempo | Length |
+|---|---|---|---|
+| `flowering_night` | Flowering Night | 152 BPM | 4.43 s |
+| `true_hero_descending` | Battle Against a True Hero | 152 BPM | 5.71 s |
+| `true_hero_chromatic` | Battle Against a True Hero | 152 BPM | 5.71 s |
+| `minoriko_descending` | Because Princess Inada is Scolding Me | 155 BPM | 4.07 s |
+| `minoriko_ascending` | Because Princess Inada is Scolding Me | 155 BPM | 4.07 s |
+| `history_of_the_moon` | Gensokyo Millennium ~ History of the Moon | 155 BPM | 4.07 s |
+| `bad_apple_arch` | Bad Apple!! | 152 BPM | 5.31 s |
+| `bad_apple_scalar` | Bad Apple!! | 152 BPM | 4.13 s |
 
-Names describe either the source or the melodic shape; see credits below for who composed what.
+Where two calls share a piece they take the same opening and then part company, so the suffix names
+the shape of the tail: `_descending` and `_ascending` for where the phrase ends up, `_chromatic` for
+a chromatic fall, `_arch` and `_scalar` for an arched line against a plain scale.
 
 See [`tools/`](tools/) for the pipeline that generated them and how to change or add melodies.
 
@@ -124,13 +126,13 @@ All eight calls are rendered from the "Romantic Tp" preset of a third-party Touh
 What is bundled is a transcribed **melody line** in each case, not anyone's arrangement, harmony or
 recording:
 
-| Call | Composer | Transcribed from |
-|---|---|---|
-| `flowering_night` | **ZUN** | "Flowering Night", via PineappleDisciple's upload |
-| `undyne_descending`, `undyne_chromatic` | **Toby Fox** | Undyne's theme, via Hakurei Gaming's arrangement |
-| `bedrock_descending`, `bedrock_ascending` | **ZUN** | BedrockSolid's "ZUNpet test" |
-| `clownplease` | **ZUN** | Clownplease's "How to play the ZUNpet" |
-| `eflat_arch`, `eflat_scalar` | **ZUN** | supplied as notation |
+| Call | Piece | Composer | Transcribed from |
+|---|---|---|---|
+| `flowering_night` | Flowering Night (Sakuya Izayoi's theme, *Imperishable Night*) | **ZUN** | PineappleDisciple's upload |
+| `true_hero_descending`, `true_hero_chromatic` | Battle Against a True Hero (Undyne the Undying's theme, *Undertale*) | **Toby Fox** | Hakurei Gaming's arrangement |
+| `minoriko_descending`, `minoriko_ascending` | 稲田姫様に叱られるから / Because Princess Inada is Scolding Me (Minoriko Aki's theme, *Mountain of Faith*) | **ZUN** | BedrockSolid's "ZUNpet test" |
+| `history_of_the_moon` | 千年幻想郷 ～ History of the Moon / Gensokyo Millennium ~ History of the Moon (Eirin Yagokoro's theme, *Imperishable Night*) | **ZUN** | Clownplease's "How to play the ZUNpet" |
+| `bad_apple_arch`, `bad_apple_scalar` | Bad Apple!! (*Lotus Land Story*) | **ZUN** | supplied as notation |
 
 Touhou Project is by ZUN (Team Shanghai Alice); the Touhou tracks above are his compositions, and
 the channels listed are where the melody was transcribed from rather than rights holders in it.

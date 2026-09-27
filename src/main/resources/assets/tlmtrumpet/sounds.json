@@ -9,72 +9,72 @@
       }
     ]
   },
-  "item.trumpet.undyne_descending": {
+  "item.trumpet.true_hero_descending": {
     "category": "voice",
     "subtitle": "subtitle.tlmtrumpet.item.trumpet",
     "sounds": [
       {
-        "name": "tlmtrumpet:trumpet/undyne_descending",
+        "name": "tlmtrumpet:trumpet/true_hero_descending",
         "stream": false
       }
     ]
   },
-  "item.trumpet.undyne_chromatic": {
+  "item.trumpet.true_hero_chromatic": {
     "category": "voice",
     "subtitle": "subtitle.tlmtrumpet.item.trumpet",
     "sounds": [
       {
-        "name": "tlmtrumpet:trumpet/undyne_chromatic",
+        "name": "tlmtrumpet:trumpet/true_hero_chromatic",
         "stream": false
       }
     ]
   },
-  "item.trumpet.bedrock_descending": {
+  "item.trumpet.minoriko_descending": {
     "category": "voice",
     "subtitle": "subtitle.tlmtrumpet.item.trumpet",
     "sounds": [
       {
-        "name": "tlmtrumpet:trumpet/bedrock_descending",
+        "name": "tlmtrumpet:trumpet/minoriko_descending",
         "stream": false
       }
     ]
   },
-  "item.trumpet.bedrock_ascending": {
+  "item.trumpet.minoriko_ascending": {
     "category": "voice",
     "subtitle": "subtitle.tlmtrumpet.item.trumpet",
     "sounds": [
       {
-        "name": "tlmtrumpet:trumpet/bedrock_ascending",
+        "name": "tlmtrumpet:trumpet/minoriko_ascending",
         "stream": false
       }
     ]
   },
-  "item.trumpet.clownplease": {
+  "item.trumpet.history_of_the_moon": {
     "category": "voice",
     "subtitle": "subtitle.tlmtrumpet.item.trumpet",
     "sounds": [
       {
-        "name": "tlmtrumpet:trumpet/clownplease",
+        "name": "tlmtrumpet:trumpet/history_of_the_moon",
         "stream": false
       }
     ]
   },
-  "item.trumpet.eflat_arch": {
+  "item.trumpet.bad_apple_arch": {
     "category": "voice",
     "subtitle": "subtitle.tlmtrumpet.item.trumpet",
     "sounds": [
       {
-        "name": "tlmtrumpet:trumpet/eflat_arch",
+        "name": "tlmtrumpet:trumpet/bad_apple_arch",
         "stream": false
       }
     ]
   },
-  "item.trumpet.eflat_scalar": {
+  "item.trumpet.bad_apple_scalar": {
     "category": "voice",
     "subtitle": "subtitle.tlmtrumpet.item.trumpet",
     "sounds": [
       {
-        "name": "tlmtrumpet:trumpet/eflat_scalar",
+        "name": "tlmtrumpet:trumpet/bad_apple_scalar",
         "stream": false
       }
     ]

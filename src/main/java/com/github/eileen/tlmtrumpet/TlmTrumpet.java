@@ -41,9 +41,9 @@ public class TlmTrumpet {
     private static final int MIN_USE_DURATION = 20;
     /** The fanfares shipped with the mod. Datapacks add more; see TlmTrumpetRegistries. */
     private static final List<String> BUILT_IN_CALLS = List.of(
-            "flowering_night", "undyne_descending", "undyne_chromatic",
-            "bedrock_descending", "bedrock_ascending", "clownplease",
-            "eflat_arch", "eflat_scalar");
+            "flowering_night", "true_hero_descending", "true_hero_chromatic",
+            "minoriko_descending", "minoriko_ascending", "history_of_the_moon",
+            "bad_apple_arch", "bad_apple_scalar");
 
     public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(Registries.SOUND_EVENT, MOD_ID);
     public static final List<DeferredHolder<SoundEvent, SoundEvent>> TRUMPET_SOUNDS = registerTrumpetSounds();
