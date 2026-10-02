@@ -43,7 +43,9 @@ public class TlmTrumpet {
     private static final List<String> BUILT_IN_CALLS = List.of(
             "flowering_night", "true_hero_descending", "true_hero_chromatic",
             "minoriko_descending", "minoriko_ascending", "history_of_the_moon",
-            "bad_apple_arch", "bad_apple_scalar");
+            "bad_apple_arch", "bad_apple_scalar",
+            "gods_loved_arch", "gods_loved_ascending",
+            "gods_loved_descending", "gods_loved_low");
 
     public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(Registries.SOUND_EVENT, MOD_ID);
     public static final List<DeferredHolder<SoundEvent, SoundEvent>> TRUMPET_SOUNDS = registerTrumpetSounds();

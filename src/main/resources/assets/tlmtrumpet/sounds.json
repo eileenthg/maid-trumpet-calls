@@ -78,5 +78,45 @@
         "stream": false
       }
     ]
+  },
+  "item.trumpet.gods_loved_arch": {
+    "category": "voice",
+    "subtitle": "subtitle.tlmtrumpet.item.trumpet",
+    "sounds": [
+      {
+        "name": "tlmtrumpet:trumpet/gods_loved_arch",
+        "stream": false
+      }
+    ]
+  },
+  "item.trumpet.gods_loved_ascending": {
+    "category": "voice",
+    "subtitle": "subtitle.tlmtrumpet.item.trumpet",
+    "sounds": [
+      {
+        "name": "tlmtrumpet:trumpet/gods_loved_ascending",
+        "stream": false
+      }
+    ]
+  },
+  "item.trumpet.gods_loved_descending": {
+    "category": "voice",
+    "subtitle": "subtitle.tlmtrumpet.item.trumpet",
+    "sounds": [
+      {
+        "name": "tlmtrumpet:trumpet/gods_loved_descending",
+        "stream": false
+      }
+    ]
+  },
+  "item.trumpet.gods_loved_low": {
+    "category": "voice",
+    "subtitle": "subtitle.tlmtrumpet.item.trumpet",
+    "sounds": [
+      {
+        "name": "tlmtrumpet:trumpet/gods_loved_low",
+        "stream": false
+      }
+    ]
   }
 }

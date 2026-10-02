@@ -11,7 +11,7 @@ issueTrackerURL = "https://github.com/eileenthg/maid-trumpet-calls/issues"
     displayURL = "https://github.com/eileenthg/maid-trumpet-calls"
     description = '''
     Gives Touhou Little Maid's trumpet a random ZUNpet fanfare when it summons your maids.
-    Eight melodies, picked on the server so everyone nearby hears the same call.
+    Twelve melodies, picked on the server so everyone nearby hears the same call.
     '''
 
 [[dependencies."${mod_id}"]]

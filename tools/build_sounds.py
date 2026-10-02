@@ -50,6 +50,14 @@ SET = [
     ('bad_apple_scalar',
      f"E{b}5:0.5 F5:0.5 G{b}5:0.5 A{b}5:0.5 B{b}5:1 A{b}5:0.5 G{b}5:0.5 F5:0.5 "
      f"E{b}5:0.5 F5:0.5 G{b}5:0.5 F5:0.5 E{b}5:0.5 D5:0.5 F5:0.5", 152.0),
+    ('gods_loved_arch',
+     "A4:.5 A4:.5 C5:.5 D5:1.5 C5:.25 D5:.25 C5:.5 A4:.5 G4:.5 C5:.5 A4:3", 140.0),
+    ('gods_loved_ascending',
+     "A4:.5 A4:.5 C5:.5 D5:1.5 C5:.25 D5:.25 F5:.5 E5:.5 D5:.5 C5:.5 D5:3", 140.0),
+    ('gods_loved_descending',
+     "C5:.25 D5:.25 C5:.5 A4:.5 G4:2.75 C5:.25 D5:.25 C5:.5 G4:.5 F4:3", 140.0),
+    ('gods_loved_low',
+     "D4:.5 E4:.5 F4:1.5 G4:.5 E4:1.5 D4:.5 D4:3", 140.0),
 ]
 
 # Small room. Bigger tails smear the 16th-note runs in flowering_night.

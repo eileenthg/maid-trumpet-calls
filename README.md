@@ -3,7 +3,7 @@
 An addon for [Touhou Little Maid](https://github.com/TartaricAcid/TouhouLittleMaid) that gives the
 trumpet a random ZUNpet fanfare when it summons your maids. Minecraft 1.21.1, NeoForge.
 
-Eight melodies ship with the mod, and **datapacks can add more**.
+Twelve melodies ship with the mod, and **datapacks can add more**.
 
 ## How it works
 
@@ -16,7 +16,7 @@ chosen and played.
 Two deliberate choices:
 
 - **The pick happens on the server** and the resulting sound is broadcast. A single sound event
-  with eight entries in `sounds.json` would let each client roll its own variant, so players
+  with twelve entries in `sounds.json` would let each client roll its own variant, so players
   standing together would hear different calls for the same blow.
 - **The trumpet is matched by registry key** (`touhou_little_maid:trumpet`), so this builds with no
   compile-time dependency on TLM. TLM is a runtime dependency only.
@@ -95,7 +95,7 @@ much higher `weight`.
 
 ## The bundled sounds
 
-Eight melodies played on the "Romantic Tp" ZUNpet samples from a Touhou soundfont, rendered mono at
+Twelve melodies played on the "Romantic Tp" ZUNpet samples from a Touhou soundfont, rendered mono at
 44.1 kHz with a small room reverb.
 
 | Call | Piece | Tempo | Length |
@@ -108,10 +108,15 @@ Eight melodies played on the "Romantic Tp" ZUNpet samples from a Touhou soundfon
 | `history_of_the_moon` | Gensokyo Millennium ~ History of the Moon | 155 BPM | 4.07 s |
 | `bad_apple_arch` | Bad Apple!! | 152 BPM | 5.31 s |
 | `bad_apple_scalar` | Bad Apple!! | 152 BPM | 4.13 s |
+| `gods_loved_arch` | The Gensokyo the Gods Loved | 140 BPM | 4.61 s |
+| `gods_loved_ascending` | The Gensokyo the Gods Loved | 140 BPM | 4.61 s |
+| `gods_loved_descending` | The Gensokyo the Gods Loved | 140 BPM | 4.72 s |
+| `gods_loved_low` | The Gensokyo the Gods Loved | 140 BPM | 4.40 s |
 
 Where two calls share a piece they take the same opening and then part company, so the suffix names
 the shape of the tail: `_descending` and `_ascending` for where the phrase ends up, `_chromatic` for
-a chromatic fall, `_arch` and `_scalar` for an arched line against a plain scale.
+a chromatic fall, `_arch` and `_scalar` for an arched line against a plain scale, and `_low` for a
+statement an octave down from its siblings.
 
 See [`tools/`](tools/) for the pipeline that generated them and how to change or add melodies.
 
@@ -120,7 +125,7 @@ See [`tools/`](tools/) for the pipeline that generated them and how to change or
 The MIT license above covers the **code**. The audio is derivative work and is credited here rather
 than claimed.
 
-All eight calls are rendered from the "Romantic Tp" preset of a third-party Touhou soundfont
+All twelve calls are rendered from the "Romantic Tp" preset of a third-party Touhou soundfont
 (`TOUHOU INSTRUMENT + DRUM KIT.sf2`) - the ZUNpet sound itself is not mine.
 
 What is bundled is a transcribed **melody line** in each case, not anyone's arrangement, harmony or
@@ -133,6 +138,7 @@ recording:
 | `minoriko_descending`, `minoriko_ascending` | 稲田姫様に叱られるから / Because Princess Inada is Scolding Me (Minoriko Aki's theme, *Mountain of Faith*) | **ZUN** | BedrockSolid's "ZUNpet test" |
 | `history_of_the_moon` | 千年幻想郷 ～ History of the Moon / Gensokyo Millennium ~ History of the Moon (Eirin Yagokoro's theme, *Imperishable Night*) | **ZUN** | Clownplease's "How to play the ZUNpet" |
 | `bad_apple_arch`, `bad_apple_scalar` | Bad Apple!! (*Lotus Land Story*) | **ZUN** | supplied as notation |
+| `gods_loved_arch`, `gods_loved_ascending`, `gods_loved_descending`, `gods_loved_low` | 神々が恋した幻想郷 / The Gensokyo the Gods Loved (stage 4 theme, *Mountain of Faith*) | **ZUN** | ViddyWell's arrangement |
 
 Touhou Project is by ZUN (Team Shanghai Alice); the Touhou tracks above are his compositions, and
 the channels listed are where the melody was transcribed from rather than rights holders in it.

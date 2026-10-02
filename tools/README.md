@@ -1,6 +1,6 @@
 # tools
 
-How the eight trumpet calls were made, and how to change them.
+How the twelve trumpet calls were made, and how to change them.
 
 Everything here is pure `numpy` / `scipy` / `soundfile`:
 
@@ -46,7 +46,7 @@ main [README](../README.md#adding-your-own-calls-with-a-datapack).
 | `zunpet.py` | sampler - pitch-shifts a zone, sustains on its loop points, applies an envelope |
 | `fx.py` | convolution reverb from a synthetic decaying-noise impulse response |
 | `extract_zunpet.py` | pulls multisamples out of an SF2 (a RIFF container) |
-| `build_sounds.py` | the eight final melodies, and the render pipeline |
+| `build_sounds.py` | the twelve final melodies, and the render pipeline |
 | `transcribe.py` | melody transcriber, used to lift the tunes off the source MP3s |
 
 ## About `transcribe.py`
